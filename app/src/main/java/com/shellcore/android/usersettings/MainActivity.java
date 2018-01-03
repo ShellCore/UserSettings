@@ -7,6 +7,8 @@ import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 
+import java.util.UUID;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -70,6 +72,16 @@ public class MainActivity extends AppCompatActivity {
         user.setDesk(preferences.getString(User.DESK_KEY, UNKNOWN));
         user.setPhone(preferences.getString(User.PHONE_KEY, UNKNOWN));
         user.setEmail(preferences.getString(User.EMAIL_KEY, UNKNOWN));
+
+        if (preferences.getBoolean("new_user", true)) {
+            String uuid = UUID.randomUUID().toString();
+
+            Snackbar.make(mainContainer, "Hola y bienvenido " + uuid, Snackbar.LENGTH_SHORT)
+                    .show();
+
+            preferences.edit().putString("user_id", uuid);
+            preferences.edit().putBoolean("new_user", false).apply();
+        }
     }
 
     @OnClick(R.id.btn_save)

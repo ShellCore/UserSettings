@@ -20,6 +20,9 @@ public class User {
     private static String phone;
     private static String email;
 
+    private static boolean newUser;
+    private static String userId;
+
     private static User user = new User();
 
     public static User getSharedInstance() {
@@ -64,5 +67,21 @@ public class User {
 
     public void setEmail(String email) {
         User.email = email;
+    }
+
+    public boolean isNewUser() {
+        return newUser;
+    }
+
+    public void setNewUser(boolean newUser) {
+        User.newUser = newUser;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        User.userId = userId;
     }
 }
