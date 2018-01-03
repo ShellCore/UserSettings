@@ -76,7 +76,7 @@
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <com.shellcore.android.usersettings.CustomLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -108,6 +108,6 @@
             android:layout_weight="1"
             android:text="@string/btn_save"
             android:textColor="@color/colorAccent" />
-    </LinearLayout>
+    </com.shellcore.android.usersettings.CustomLinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>
